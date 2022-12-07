@@ -14,16 +14,6 @@ Array.from(taskCompleted).forEach((element)=>{
     element.addEventListener('click', markIncomplete)
 })
 
-// function fetchData(){
-//     console.log('Fetch Working')
-//     fetch('https://media-mail-api.vercel.app/api/weight/')
-//     .then(data => {
-//         data.json()
-//     })
-// }
-
-// fetchData();
-
 async function markComplete() {
     const selectedTask = this.parentNode.childNodes[1].innerText
     try{
