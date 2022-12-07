@@ -1,13 +1,9 @@
 {
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+    "version": 2,
+    "builds": [
+       { "src": "index.js", "use": "@vercel/node" }
     ],
-    "functions": {
-      "api/test.php": {
-        "runtime": "vercel-php@0.1.0"
-      }
-    }
-}
+    "routes": [
+       { "src": "/(.*)", "dest": "/index.js" }
+    ]
+ }
