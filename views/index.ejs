@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pages/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <div class="lines"></div>
+
+    <h1>To Do List <br>
+    Tasks Left: <%= tasksLeft %></h1>
+    
+    <form action="/addTask" method="post">
+        <input class="taskName" type="text" placeholder="Write a Task!" name="task">
+        <input type="submit">
+    </form>
+    
+    <ul>
+        <% for(let i = 0; i < items.length; i++) {%>
+        <li class="taskList">
+            <% if (items[i].completed === true) {%>
+                <span class="completed"><%= items[i].todo %></span>
+                <% }else{ %>
+                    <span><%= items[i].todo %></span>
+                    <% } %>
+                <img class="trashCan" src="../pages/css/delete.png">
+        </li>
+        <% } %>
+    </ul>
+
+</body>
+<script src="../pages/js/main.js"></script>
+</html>
