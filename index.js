@@ -8,7 +8,7 @@ require('dotenv').config();
 
 // MongoDB Connection URL
 let db;
-    dbConnectionStr = "mongodb://mongo:********@containers-us-west-140.railway.app:7188"
+    dbConnectionStr = process.env.MONGO_URL;
     dbName = 'to-do-list';
 
 // Connect to Database
